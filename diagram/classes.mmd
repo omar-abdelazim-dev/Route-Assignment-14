@@ -1,0 +1,48 @@
+classDiagram
+    class User {
+        +Id: number
+        +name: string
+        +email: string
+        -Password: string
+        #Phone: string
+        -_age: number
+        -notebooks: NoteBook[]
+        +age: number [18..60]
+        +displayInfo() void
+        +addNotebook(notebook: NoteBook) void
+        +removeNotebook(notebook: NoteBook) boolean
+        +getNotebooks() NoteBook[]
+    }
+    class Admin {
+        +manageNotes(notebook: NoteBook, noteId: number) boolean
+    }
+    class Note {
+        +Id: number
+        +tittle: string
+        +content: string
+        +userId: User
+        -Note(id, tittle, content, author)
+        +createFactory() Function$
+        +preview(length: number = 50) string
+    }
+    class NoteBook {
+        +Id: number
+        +name: string
+        -notes: Note[]
+        -createNote: Function
+        +addNote(id, tittle, content, author: User) Note
+        +removeNote(id: number) boolean
+        +getNotes() Note[]
+        +clear() void
+    }
+    class Storage~T~ {
+        -items: T[]
+        +addItem(item: T) void
+        +removeItem(item: T) boolean
+        +getAllItems() T[]
+    }
+    User <|-- Admin : Inheritance
+    User "0..*" o-- "0..*" NoteBook : Aggregation - owns
+    NoteBook "1" *-- "0..*" Note : Composition - contains
+    Note "0..*" --> "1" User : Association - author
+    Admin ..> NoteBook : manages

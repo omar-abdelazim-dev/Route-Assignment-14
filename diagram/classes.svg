@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1220" viewBox="0 0 1600 1220">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#334155"/></marker><marker id="inherit" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="16" markerHeight="16" orient="auto"><path d="M1 1 L11 6 L1 11 Z" fill="white" stroke="#334155"/></marker></defs>
+<rect width="1600" height="1220" fill="#fff"/>
+<g font-family="Arial, sans-serif" fill="#172b4d">
+<text x="60" y="48" font-size="28" font-weight="bold">Simple Notes Management System</text>
+<text x="60" y="79" font-size="17">Assignment 14 · TypeScript OOP class diagram</text>
+<rect x="60" y="150" width="570" height="414" rx="4" fill="#fff" stroke="#334155" stroke-width="2"/>
+<path d="M60 196 H630" stroke="#334155"/>
+<text x="76" y="180" font-size="21">User</text>
+<text x="76" y="223" font-size="16">+ Id: number {readonly}</text>
+<text x="76" y="249" font-size="16">+ name: string</text>
+<text x="76" y="275" font-size="16">+ email: string</text>
+<text x="76" y="301" font-size="16">- Password: string</text>
+<text x="76" y="327" font-size="16"># Phone: string</text>
+<text x="76" y="353" font-size="16">- _age: number</text>
+<text x="76" y="379" font-size="16">+ age: number {get/set; integer 18..60}</text>
+<text x="76" y="405" font-size="16">- notebooks: NoteBook[]</text>
+<path d="M60 422 H630" stroke="#334155"/>
+<text x="76" y="448" font-size="15">+ User(Id, name, email, Password, Phone, age)</text>
+<text x="76" y="474" font-size="15">+ displayInfo(): void</text>
+<text x="76" y="500" font-size="15">+ addNotebook(notebook: NoteBook): void</text>
+<text x="76" y="526" font-size="15">+ removeNotebook(notebook: NoteBook): boolean</text>
+<text x="76" y="552" font-size="15">+ getNotebooks(): readonly NoteBook[]</text>
+<rect x="900" y="150" width="630" height="310" rx="4" fill="#fff" stroke="#334155" stroke-width="2"/>
+<path d="M900 196 H1530" stroke="#334155"/>
+<text x="916" y="180" font-size="21">NoteBook</text>
+<text x="916" y="223" font-size="16">+ Id: number {readonly}</text>
+<text x="916" y="249" font-size="16">+ name: string</text>
+<text x="916" y="275" font-size="16">- notes: Note[]</text>
+<text x="916" y="301" font-size="16">- createNote: Function</text>
+<path d="M900 318 H1530" stroke="#334155"/>
+<text x="916" y="344" font-size="15">+ NoteBook(Id: number, name: string)</text>
+<text x="916" y="370" font-size="15">+ addNote(id, tittle, content, author: User): Note</text>
+<text x="916" y="396" font-size="15">+ removeNote(id: number): boolean</text>
+<text x="916" y="422" font-size="15">+ getNotes(): readonly Note[]</text>
+<text x="916" y="448" font-size="15">+ clear(): void</text>
+<rect x="60" y="800" width="570" height="128" rx="4" fill="#fff" stroke="#334155" stroke-width="2"/>
+<path d="M60 846 H630" stroke="#334155"/>
+<text x="76" y="830" font-size="21">Admin</text>
+<path d="M60 864 H630" stroke="#334155"/>
+<text x="76" y="890" font-size="15">+ Admin(inherited User constructor)</text>
+<text x="76" y="916" font-size="15">+ manageNotes(notebook: NoteBook, noteId: number): boolean</text>
+<rect x="900" y="700" width="630" height="258" rx="4" fill="#fff" stroke="#334155" stroke-width="2"/>
+<path d="M900 746 H1530" stroke="#334155"/>
+<text x="916" y="730" font-size="21">Note</text>
+<text x="916" y="773" font-size="16">+ Id: number {readonly}</text>
+<text x="916" y="799" font-size="16">+ tittle: string</text>
+<text x="916" y="825" font-size="16">+ content: string</text>
+<text x="916" y="851" font-size="16">+ userId: User {readonly}</text>
+<path d="M900 868 H1530" stroke="#334155"/>
+<text x="916" y="894" font-size="15">- Note(id, tittle, content, author)</text>
+<text x="916" y="920" font-size="15">+ createFactory(): Function {static}</text>
+<text x="916" y="946" font-size="15">+ preview(length: number = 50): string</text>
+<rect x="60" y="1000" width="570" height="180" rx="4" fill="#fff" stroke="#334155" stroke-width="2"/>
+<path d="M60 1046 H630" stroke="#334155"/>
+<text x="76" y="1030" font-size="21">Storage&lt;T&gt;</text>
+<text x="76" y="1073" font-size="16">- items: T[]</text>
+<path d="M60 1090 H630" stroke="#334155"/>
+<text x="76" y="1116" font-size="15">+ addItem(item: T): void</text>
+<text x="76" y="1142" font-size="15">+ removeItem(item: T): boolean</text>
+<text x="76" y="1168" font-size="15">+ getAllItems(): T[]</text>
+<path d="M630 260 L644 252 L658 260 L644 268 Z" fill="none" stroke="#334155" stroke-width="2" />
+<path d="M658 260 H900" fill="none" stroke="#334155" stroke-width="2" />
+<text x="666" y="237" font-size="17">Aggregation · owns</text>
+<text x="665" y="283" font-size="16">0..*</text>
+<text x="853" y="283" font-size="16">0..*</text>
+<path d="M1200 460 L1192 474 L1200 488 L1208 474 Z" fill="#334155" stroke="#334155"/>
+<path d="M1200 488 V700" fill="none" stroke="#334155" stroke-width="2" />
+<text x="1218" y="570" font-size="17">Composition · contains</text>
+<text x="1170" y="527" font-size="16">1</text>
+<text x="1150" y="683" font-size="16">0..*</text>
+<path d="M345 800 V564" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#inherit)"/>
+<text x="365" y="733" font-size="17">Inheritance</text>
+<path d="M900 785 H735 V550 H630" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="641" y="640" font-size="16">Association</text>
+<text x="641" y="665" font-size="16">author</text>
+<text x="843" y="811" font-size="16">0..*</text>
+<text x="643" y="539" font-size="16">1</text>
+<path d="M630 865 H810 V420 H900" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+<text x="822" y="466" font-size="15">manages</text>
+<text x="900" y="1060" font-size="17">Visibility: + public    - private    # protected</text>
+<text x="900" y="1094" font-size="16">Notes are created and removed inside their notebook.</text>
+<text x="900" y="1124" font-size="16">Detaching a notebook from a user keeps it intact.</text>
+<text x="900" y="1154" font-size="16">Each note references exactly one author.</text>
+<path d="M345 564 L335 582 L355 582 Z" fill="white" stroke="#334155" stroke-width="2"/><path d="M642 544 L630 550 L642 556 M888 414 L900 420 L888 426" fill="none" stroke="#334155" stroke-width="2"/>
+</g></svg>
